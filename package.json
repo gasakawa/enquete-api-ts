@@ -1,0 +1,7 @@
+{
+  "name": "enquete",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gabriel Asakawa <gabriel.asakawa@gmail.com>",
+  "license": "MIT"
+}
