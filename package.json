@@ -23,7 +23,7 @@
     "yarn-check": "^0.0.3"
   },
   "scripts": {
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "jest --passWithNoTests",
+    "test:staged": "jest --passWithNoTests"
   }
 }
