@@ -8,7 +8,6 @@
     "@typescript-eslint/consistent-type-definition": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/return-await": "off",
-    "@typescript-eslint/space-before-function-paren": "off",
-    "comma-dangle": "off"
+    "@typescript-eslint/space-before-function-paren": "off"
   }
 }

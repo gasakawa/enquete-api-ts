@@ -4,7 +4,7 @@ import {
   EmailValidator,
   AddAccountModel,
   AccountModel,
-  AddAccount,
+  AddAccount
 } from './signup-protocols'
 
 const makeEmailValidator = (): EmailValidator => {
@@ -23,7 +23,7 @@ const makeAddAccount = (): AddAccount => {
         id: 'valid_id',
         name: 'valid_name',
         email: 'valid_email@email.com',
-        password: 'valid_password',
+        password: 'valid_password'
       }
       return new Promise(resolve => resolve(fakeAccount))
     }
@@ -44,7 +44,7 @@ const makeSut = (): SutTypes => {
   return {
     sut,
     emailValidatorStub,
-    addAccountStub,
+    addAccountStub
   }
 }
 
@@ -55,8 +55,8 @@ describe('SignUp Controller', () => {
       body: {
         email: 'any_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password',
-      },
+        passwordConfirmation: 'any_password'
+      }
     }
     const httpResponse = await await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
@@ -69,8 +69,8 @@ describe('SignUp Controller', () => {
       body: {
         name: 'any_name',
         password: 'any_password',
-        passwordConfirmation: 'any_password',
-      },
+        passwordConfirmation: 'any_password'
+      }
     }
     const httpResponse = await await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
@@ -83,8 +83,8 @@ describe('SignUp Controller', () => {
       body: {
         name: 'any_name',
         email: 'any_email@email.com',
-        passwordConfirmation: 'any_password',
-      },
+        passwordConfirmation: 'any_password'
+      }
     }
     const httpResponse = await await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
@@ -97,13 +97,13 @@ describe('SignUp Controller', () => {
       body: {
         name: 'any_name',
         email: 'any_email@email.com',
-        password: 'any_password',
-      },
+        password: 'any_password'
+      }
     }
     const httpResponse = await await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(
-      new MissingParamError('passwordConfirmation'),
+      new MissingParamError('passwordConfirmation')
     )
   })
 
@@ -115,8 +115,8 @@ describe('SignUp Controller', () => {
         name: 'any_name',
         email: 'invalid_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password',
-      },
+        passwordConfirmation: 'any_password'
+      }
     }
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
@@ -129,13 +129,13 @@ describe('SignUp Controller', () => {
       body: {
         name: 'any_name',
         email: 'any_email@email.com',
-        password: 'any_password',
-      },
+        password: 'any_password'
+      }
     }
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(
-      new MissingParamError('passwordConfirmation'),
+      new MissingParamError('passwordConfirmation')
     )
   })
 
@@ -146,13 +146,13 @@ describe('SignUp Controller', () => {
         name: 'any_name',
         email: 'any_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'invalid_password',
-      },
+        passwordConfirmation: 'invalid_password'
+      }
     }
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(
-      new InvalidParamError('passwordConfirmation'),
+      new InvalidParamError('passwordConfirmation')
     )
   })
 
@@ -164,8 +164,8 @@ describe('SignUp Controller', () => {
         name: 'any_name',
         email: 'valid_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password',
-      },
+        passwordConfirmation: 'any_password'
+      }
     }
     await sut.handle(httpRequest)
     expect(isValidSpy).toHaveBeenCalledWith('valid_email@email.com')
@@ -182,8 +182,8 @@ describe('SignUp Controller', () => {
         name: 'any_name',
         email: 'any_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password',
-      },
+        passwordConfirmation: 'any_password'
+      }
     }
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(500)
@@ -201,8 +201,8 @@ describe('SignUp Controller', () => {
         name: 'any_name',
         email: 'any_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password',
-      },
+        passwordConfirmation: 'any_password'
+      }
     }
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(500)
@@ -217,14 +217,14 @@ describe('SignUp Controller', () => {
         name: 'any_name',
         email: 'valid_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password',
-      },
+        passwordConfirmation: 'any_password'
+      }
     }
     await sut.handle(httpRequest)
     expect(addSpy).toHaveBeenCalledWith({
       name: 'any_name',
       email: 'valid_email@email.com',
-      password: 'any_password',
+      password: 'any_password'
     })
   })
 
@@ -236,8 +236,8 @@ describe('SignUp Controller', () => {
         name: 'valid_name',
         email: 'valid_email@email.com',
         password: 'valid_password',
-        passwordConfirmation: 'valid_password',
-      },
+        passwordConfirmation: 'valid_password'
+      }
     }
     const httpResponse = await sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(200)
@@ -245,7 +245,7 @@ describe('SignUp Controller', () => {
       id: 'valid_id',
       name: 'valid_name',
       email: 'valid_email@email.com',
-      password: 'valid_password',
+      password: 'valid_password'
     })
   })
 })
