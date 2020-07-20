@@ -664,10 +664,10 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^25.2.3":
-  version "25.2.3"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.2.3.tgz#33d27e4c4716caae4eced355097a47ad363fdcaf"
-  integrity sha512-JXc1nK/tXHiDhV55dvfzqtmP4S3sy3T3ouV2tkViZgxY/zeUkcpQcQPGRlgF4KmWzWW5oiWYSZwtCB+2RsE4Fw==
+"@types/jest@^26.0.0":
+  version "26.0.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.0.tgz#a6d7573dffa9c68cbbdf38f2e0de26f159e11134"
+  integrity sha512-/yeMsH9HQ1RLORlXAwoLXe8S98xxvhNtUz3yrgrwbaxYjT+6SFPZZRksmRKRA6L5vsUtSHeN71viDOTTyYAD+g==
   dependencies:
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
@@ -3881,6 +3881,11 @@ lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
+
+lodash@^4.17.1:
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
   version "4.17.15"
